@@ -4,7 +4,7 @@ export default [
     url: 'https://vimeo.com/289412607',
   },
   {
-    name: 'Nature & Warehouse',
+    name: 'Nature and Warehouse',
     url: 'https://vimeo.com/289415952',
   },
   {
