@@ -12,7 +12,16 @@ class VideoDisplay extends Component {
 
   setVideo = index => {
     this.setState({ videoIndex: index });
+    if (index !== null) {
+      this.props.toggleBackgroundAudio(false);
+    } else {
+      this.props.toggleBackgroundAudio(false);
+    }
   };
+
+  componentWillUnmount() {
+    this.props.toggleBackgroundAudio(true);
+  }
 
   render() {
     let { videoIndex } = this.state;

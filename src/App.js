@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Modal from 'react-modal';
+import Sound from 'react-sound';
 
 import VideoList from './videos';
 import VideoDisplay from './VideoDisplay';
@@ -9,6 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      backgroundAudio: true,
       isOpen: false,
       initialized: false,
       overlay: false,
@@ -25,6 +27,13 @@ class App extends Component {
     setTimeout(this.toggleModal, 750);
     window.addEventListener('resize', this.updateDimensions);
   }
+
+  toggleBackgroundAudio = value => {
+    this.setState({
+      ...this.state,
+      backgroundAudio: value ? value : !this.state.backgroundAudio,
+    });
+  };
 
   onClick = () => {
     this.toggleModal();
@@ -58,8 +67,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.data);
-    let { isOpen, overlay, initialized } = this.state;
+    let { isOpen, overlay, initialized, backgroundAudio } = this.state;
     return (
       <div className="wrapper w-100 h-100">
         <div className="pt-main pt-perspective w-100 h-100">
@@ -115,10 +123,11 @@ class App extends Component {
             onRequestClose={this.toggleModal}
             shouldCloseOnEsc={true}>
             <div className="pa3 tc br-50 br-near-white w-100 h-100 flex flex-column items-center">
-              <VideoDisplay videos={VideoList} />
+              <VideoDisplay videos={VideoList} toggleBackgroundAudio={this.toggleBackgroundAudio} />
             </div>
           </Modal>
         )}
+        {backgroundAudio && <Sound url="/audio/background.mp3" playStatus={Sound.status.PLAYING} />}
       </div>
     );
   }
