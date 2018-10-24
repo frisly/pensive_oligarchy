@@ -41,6 +41,9 @@ class VideoDisplay extends Component {
           </div>
           <div>
             <select className="input-reset pa2 ph3 br-pill ba grow mb3 pointer w-100 tc bg-near-black near-white">
+              <option key={'null'} value={null} onClick={() => this.setVideo(null)}>
+                Select a Video
+              </option>
               {videos.map((video, index) => (
                 <option key={index} value={index} onClick={() => this.setVideo(index)}>
                   {video.name}
