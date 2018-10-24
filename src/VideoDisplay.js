@@ -23,6 +23,10 @@ class VideoDisplay extends Component {
     this.props.toggleBackgroundAudio(true);
   }
 
+  handleChange = event => {
+    this.setVideo(event.target.value);
+  };
+
   render() {
     let { videoIndex } = this.state;
     let { videos } = this.props;
@@ -39,13 +43,16 @@ class VideoDisplay extends Component {
               </div>
             ))}
           </div>
-          <div>
-            <select className="input-reset pa2 ph3 br-pill ba grow mb3 pointer w-100 tc bg-near-black near-white">
-              <option key={'null'} value={null} onClick={() => this.setVideo(null)}>
+          <div className="dn-ns db">
+            <select
+              className="input-reset pa2 ph3 br-pill ba grow mb3 pointer w-100 tc bg-near-black near-white"
+              onChange={this.handleChange}
+              value={this.state.videoIndex}>
+              <option key={'null'} value={null}>
                 Select a Video
               </option>
               {videos.map((video, index) => (
-                <option key={index} value={index} onClick={() => this.setVideo(index)}>
+                <option key={index} value={index}>
                   {video.name}
                 </option>
               ))}
