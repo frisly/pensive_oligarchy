@@ -1,9 +1,7 @@
 @import '_animated';
 @import '_flash';
 
-$near-black: #111111;
 $near-white: #f4f4f4;
-$silver: #999999;
 
 @font-face {
   font-family: '8BIT WONDER';
@@ -14,15 +12,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-}
-
-body {
-  background-color: $near-black;
-  color: $near-white;
-}
-
-.silver {
-  color: $silver;
 }
 
 code,
