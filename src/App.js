@@ -72,14 +72,13 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.loading);
     if (this.state.loading) {
       return <div className="absolute w-100 h-100 landing" />;
     }
 
     let { isOpen, overlay, initialized, backgroundAudio } = this.state;
     return (
-      <div className="wrapper w-100 h-100">
+      <div className="wrapper w-100 h-100 bg-near-black near-white">
         <div className="pt-main pt-perspective w-100 h-100">
           <div className="flex flex-column items-center">
             <div className="absolute w-100 h-100 landing" />
@@ -95,7 +94,7 @@ class App extends Component {
             )}
           </div>
           <div
-            className={`fixed right-10 top-10 pa2 pointer ${
+            className={`fixed right-10 top-10 pa2 pointer ttu tracked ${
               backgroundAudio ? '' : 'strike silver'
             }`}
             onClick={() => this.toggleBackgroundAudio()}>

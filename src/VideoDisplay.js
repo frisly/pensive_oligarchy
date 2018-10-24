@@ -28,17 +28,28 @@ class VideoDisplay extends Component {
     let { videos } = this.props;
     return (
       <div className="cf w-100 h-100">
-        <div className="fl w-third pa2 ph3" id="video-list">
-          {videos.map((video, index) => (
-            <div
-              key={index}
-              onClick={() => this.setVideo(index)}
-              className="overflow-hidden pa2 br-pill ba grow mb2 pointer">
-              <span className="nowrap video-option">{video.name}</span>
-            </div>
-          ))}
+        <div className="fl w-100 w-third-ns pa2 ph3" id="video-list">
+          <div className="db-ns dn">
+            {videos.map((video, index) => (
+              <div
+                key={index}
+                onClick={() => this.setVideo(index)}
+                className="overflow-hidden pa2 ph3 br-pill ba grow mb3 pointer">
+                <span className="nowrap video-option">{video.name}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            <select className="input-reset pa2 ph3 br-pill ba grow mb3 pointer w-100 tc bg-near-black near-white">
+              {videos.map((video, index) => (
+                <option key={index} value={index} onClick={() => this.setVideo(index)}>
+                  {video.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div className="fl w-two-thirds w-100 h-100 pa2" id="video-display">
+        <div className="fl w-100 w-two-thirds-ns w-100 h-100 pa2" id="video-display">
           {videoIndex === null ? (
             <div className="static-gif w-100 h-100" />
           ) : (
