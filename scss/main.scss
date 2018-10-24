@@ -4,6 +4,11 @@
 $near-black: #111111;
 $near-white: #f4f4f4;
 
+@font-face {
+  font-family: '8BIT WONDER';
+  src: url('/fonts/8-BIT-WONDER.ttf');
+}
+
 html,
 body {
   padding: 0;
@@ -17,7 +22,7 @@ body {
 
 code,
 .code {
-  font-family: Consolas, monaco, monospace;
+  font-family: '8BIT WONDER', Consolas, monaco, monospace;
 }
 
 .landing,
@@ -55,7 +60,7 @@ code,
   width: 90vw;
   height: 90vh;
   background-color: rgba(17, 17, 17, 0.8);
-  font-size: calc(2vw + 2vh);
+  font-size: calc(1.65vw + 1.65vh);
 }
 .video-modal {
   width: 90vw;
