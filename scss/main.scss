@@ -1,0 +1,93 @@
+@import '_animated';
+@import '_flash';
+
+$near-black: #111111;
+$near-white: #f4f4f4;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $near-black;
+  color: $near-white;
+}
+
+code,
+.code {
+  font-family: Consolas, monaco, monospace;
+}
+
+.landing,
+.tv,
+.vhs,
+.vhs-overlay {
+  background-size: auto 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.landing {
+  background-image: url('/img/background.png');
+}
+
+.tv {
+  background-image: url('/img/tv-set.png');
+}
+
+.vhs {
+  background-image: url('/img/vhs.png');
+}
+
+.vhs-overlay {
+  background-image: url('/img/vhs-overlay.png');
+}
+
+.bg-near-black--o-50 {
+  background-color: rgba(17, 17, 17, 0.5);
+}
+
+.initial-modal {
+  width: 90vw;
+  height: 90vh;
+  background-color: rgba(17, 17, 17, 0.8);
+  font-size: calc(2vw + 2vh);
+}
+.video-modal {
+  width: 90vw;
+  height: 90vh;
+  background-color: rgba(17, 17, 17, 0.8);
+  font-size: calc(1vw + 1vh);
+}
+
+.br-50 {
+  border-radius: 50px;
+}
+
+.br-near-white {
+  border: 4px solid $near-white;
+}
+.static-gif {
+  background-image: url('https://media.giphy.com/media/OVlFjmEDhx9rG/giphy.gif');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.video-option {
+  span {
+    &:hover {
+      /* Starting position */
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+      /* Apply animation to this element */
+      -moz-animation: example1 15s linear infinite;
+      -webkit-animation: example1 15s linear infinite;
+      animation: example1 15s linear infinite;
+    }
+  }
+}

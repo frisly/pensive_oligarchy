@@ -1,0 +1,121 @@
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both; }
+
+.animated.infinite {
+  animation-iteration-count: infinite; }
+
+.animated.delay-1s {
+  animation-delay: 1s; }
+
+.animated.delay-2s {
+  animation-delay: 2s; }
+
+.animated.delay-3s {
+  animation-delay: 3s; }
+
+.animated.delay-4s {
+  animation-delay: 4s; }
+
+.animated.delay-5s {
+  animation-delay: 5s; }
+
+.animated.fast {
+  animation-duration: 800ms; }
+
+.animated.faster {
+  animation-duration: 500ms; }
+
+.animated.slow {
+  animation-duration: 2s; }
+
+.animated.slower {
+  animation-duration: 3s; }
+
+@media (prefers-reduced-motion) {
+  .animated {
+    animation: unset !important;
+    transition: none !important; } }
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1; }
+  25%,
+  75% {
+    opacity: 0; } }
+.flash {
+  animation-name: flash; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #111111;
+  color: #f4f4f4; }
+
+code,
+.code {
+  font-family: Consolas, monaco, monospace; }
+
+.landing,
+.tv,
+.vhs,
+.vhs-overlay {
+  background-size: auto 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh; }
+
+.landing {
+  background-image: url("/img/background.png"); }
+
+.tv {
+  background-image: url("/img/tv-set.png"); }
+
+.vhs {
+  background-image: url("/img/vhs.png"); }
+
+.vhs-overlay {
+  background-image: url("/img/vhs-overlay.png"); }
+
+.bg-near-black--o-50 {
+  background-color: rgba(17, 17, 17, 0.5); }
+
+.initial-modal {
+  width: 90vw;
+  height: 90vh;
+  background-color: rgba(17, 17, 17, 0.8);
+  font-size: calc(2vw + 2vh); }
+
+.video-modal {
+  width: 90vw;
+  height: 90vh;
+  background-color: rgba(17, 17, 17, 0.8);
+  font-size: calc(1vw + 1vh); }
+
+.br-50 {
+  border-radius: 50px; }
+
+.br-near-white {
+  border: 4px solid #f4f4f4; }
+
+.static-gif {
+  background-image: url("https://media.giphy.com/media/OVlFjmEDhx9rG/giphy.gif");
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
+
+.video-option span:hover {
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  -moz-animation: example1 15s linear infinite;
+  -webkit-animation: example1 15s linear infinite;
+  animation: example1 15s linear infinite; }
+
+/*# sourceMappingURL=index.css.map */
