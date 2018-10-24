@@ -16,6 +16,7 @@ class App extends Component {
       overlay: false,
       width: 0,
       height: 0,
+      loading: true,
     };
   }
 
@@ -24,7 +25,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setTimeout(this.toggleModal, 750);
+    setTimeout(() => {
+      this.setState({ ...this.state, loading: false });
+    }, 500);
+    setTimeout(this.toggleModal, 1000);
     window.addEventListener('resize', this.updateDimensions);
   }
 
@@ -67,6 +71,11 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.loading);
+    if (this.state.loading) {
+      return <div className="absolute w-100 h-100 landing" />;
+    }
+
     let { isOpen, overlay, initialized, backgroundAudio } = this.state;
     return (
       <div className="wrapper w-100 h-100">
