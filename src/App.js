@@ -33,6 +33,7 @@ class App extends Component {
   }
 
   toggleBackgroundAudio = value => {
+    console.log(value);
     this.setState({
       ...this.state,
       backgroundAudio: value ? value : !this.state.backgroundAudio,
@@ -92,6 +93,13 @@ class App extends Component {
                 onClick={this.onClick}
               />
             )}
+          </div>
+          <div
+            className={`fixed right-10 top-10 pa2 pointer ${
+              backgroundAudio ? '' : 'strike silver'
+            }`}
+            onClick={() => this.toggleBackgroundAudio()}>
+            Audio
           </div>
         </div>
 

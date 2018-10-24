@@ -59,6 +59,9 @@ body {
   background-color: #111111;
   color: #f4f4f4; }
 
+.silver {
+  color: #999999; }
+
 code,
 .code {
   font-family: '8BIT WONDER', Consolas, monaco, monospace; }

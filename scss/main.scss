@@ -3,6 +3,7 @@
 
 $near-black: #111111;
 $near-white: #f4f4f4;
+$silver: #999999;
 
 @font-face {
   font-family: '8BIT WONDER';
@@ -18,6 +19,10 @@ body {
 body {
   background-color: $near-black;
   color: $near-white;
+}
+
+.silver {
+  color: $silver;
 }
 
 code,
