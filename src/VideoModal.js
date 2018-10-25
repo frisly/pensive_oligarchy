@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Modal from 'react-modal';
-import VimeoPlayer from 'react-player';
+import VideoComponent from './VideoComponent';
 
 class VideoDisplay extends Component {
   constructor() {
@@ -71,16 +71,7 @@ class VideoDisplay extends Component {
               {videoIndex === null ? (
                 <div className="static-gif w-100 h-100" />
               ) : (
-                <VimeoPlayer
-                  url={videos[videoIndex].url}
-                  width="100%"
-                  height="100%"
-                  playerOptions={{
-                    autoplay: true,
-                    byline: false,
-                    title: false,
-                  }}
-                />
+                <VideoComponent url={videos[videoIndex].url} />
               )}
             </div>
           </div>
