@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   toggleMap = value => {
-    if ([true, false].contains(value)) {
+    if ([true, false].includes(value)) {
       this.setState({
         ...this.state,
         mapIsOpen: value,
@@ -48,7 +48,7 @@ class App extends Component {
   };
 
   toggleBackgroundAudio = value => {
-    if ([true, false].contains(value)) {
+    if ([true, false].includes(value)) {
       this.setState({
         ...this.state,
         backgroundAudio: value,
