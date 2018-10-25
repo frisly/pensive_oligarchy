@@ -47,7 +47,7 @@ class VideoDisplay extends Component {
                     key={index}
                     onClick={() => this.setVideo(index)}
                     className="overflow-hidden pa2 ph3 br-pill ba grow mb3 pointer">
-                    <span className="nowrap video-option">{video.name}</span>
+                    <div className="nowrap video-option w-100">{video.name}</div>
                   </div>
                 ))}
               </div>
