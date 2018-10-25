@@ -34,17 +34,31 @@ class App extends Component {
   }
 
   toggleMap = value => {
-    this.setState({
-      ...this.state,
-      mapIsOpen: value ? value : !this.state.mapIsOpen,
-    });
+    if ([true, false].contains(value)) {
+      this.setState({
+        ...this.state,
+        mapIsOpen: value,
+      });
+    } else {
+      this.setState({
+        ...this.state,
+        mapIsOpen: !this.state.mapIsOpen,
+      });
+    }
   };
 
   toggleBackgroundAudio = value => {
-    this.setState({
-      ...this.state,
-      backgroundAudio: value ? value : !this.state.backgroundAudio,
-    });
+    if ([true, false].contains(value)) {
+      this.setState({
+        ...this.state,
+        backgroundAudio: value,
+      });
+    } else {
+      this.setState({
+        ...this.state,
+        backgroundAudio: !this.state.backgroundAudio,
+      });
+    }
   };
 
   onClick = () => {
