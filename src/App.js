@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-import Modal from 'react-modal';
 import Sound from 'react-sound';
 
+import IntroModal from './IntroModal';
 import VideoList from './videos';
-import VideoDisplay from './VideoDisplay';
+import VideoModal from './VideoModal';
 import Map from './Map';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      backgroundAudio: true,
+      backgroundAudio: false,
       mapIsOpen: false,
       isOpen: false,
       initialized: false,
@@ -42,7 +42,6 @@ class App extends Component {
   };
 
   toggleBackgroundAudio = value => {
-    console.log(value);
     this.setState({
       ...this.state,
       backgroundAudio: value ? value : !this.state.backgroundAudio,
@@ -117,45 +116,14 @@ class App extends Component {
         </div>
 
         {!initialized ? (
-          <Modal
-            className="center z-10 o-100 near-white initial-modal br-50"
-            isOpen={isOpen}
-            overlayClassName={{
-              base: 'dn',
-              afterOpen:
-                'db flex items-center w-100 h-100 fixed top-0 bottom-0 left-0 right-0 z-0 bg-near-black--o-50',
-            }}
-            onRequestClose={this.initiateExperience}
-            shouldCloseOnEsc={true}>
-            <div className="pa5-ns pa4-m pa3 tc br-50 br-near-white w-100 h-100 flex flex-column items-center">
-              <p className="">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                officia deserunt mollitia animi, id est laborum et dolorum fuga.
-              </p>
-              <div
-                className="button br2 pa2 mt3 bg-near-white near-black pointer ttu tracked b"
-                onClick={this.initiateExperience}>
-                Begin or whatnot
-              </div>
-            </div>
-          </Modal>
+          <IntroModal open={isOpen} close={this.initiateExperience} />
         ) : (
-          <Modal
-            className="center z-10 o-100 near-white video-modal br-50"
-            isOpen={isOpen}
-            overlayClassName={{
-              base: 'dn',
-              afterOpen:
-                'db flex items-center w-100 h-100 fixed top-0 bottom-0 left-0 right-0 z-0 bg-near-black--o-50',
-            }}
-            onRequestClose={this.toggleModal}
-            shouldCloseOnEsc={true}>
-            <div className="pa3 tc br-50 br-near-white w-100 h-100 flex flex-column items-center">
-              <VideoDisplay videos={VideoList} toggleBackgroundAudio={this.toggleBackgroundAudio} />
-            </div>
-          </Modal>
+          <VideoModal
+            open={isOpen}
+            close={this.toggleModal}
+            videos={VideoList}
+            toggleBackgroundAudio={this.toggleBackgroundAudio}
+          />
         )}
         {backgroundAudio && <Sound url="/audio/background.mp3" playStatus={Sound.status.PLAYING} />}
         {mapIsOpen && <Map toggle={this.toggleMap} videos={VideoList} />}
