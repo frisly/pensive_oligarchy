@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       backgroundAudio: false,
       mapIsOpen: false,
-      isOpen: false,
+      isOpen: true,
       initialized: false,
       overlay: false,
       width: 0,
@@ -29,8 +29,7 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ ...this.state, loading: false });
-    }, 500);
-    setTimeout(this.toggleModal, 1000);
+    }, 1000);
     window.addEventListener('resize', this.updateDimensions);
   }
 
