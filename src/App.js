@@ -5,12 +5,14 @@ import Sound from 'react-sound';
 
 import VideoList from './videos';
 import VideoDisplay from './VideoDisplay';
+import Map from './Map';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       backgroundAudio: true,
+      mapIsOpen: false,
       isOpen: false,
       initialized: false,
       overlay: false,
@@ -31,6 +33,13 @@ class App extends Component {
     setTimeout(this.toggleModal, 1000);
     window.addEventListener('resize', this.updateDimensions);
   }
+
+  toggleMap = value => {
+    this.setState({
+      ...this.state,
+      mapIsOpen: value ? value : !this.state.mapIsOpen,
+    });
+  };
 
   toggleBackgroundAudio = value => {
     console.log(value);
@@ -76,7 +85,7 @@ class App extends Component {
       return <div className="absolute w-100 h-100 landing" />;
     }
 
-    let { isOpen, overlay, initialized, backgroundAudio } = this.state;
+    let { isOpen, overlay, initialized, backgroundAudio, mapIsOpen } = this.state;
     return (
       <div className="wrapper w-100 h-100 bg-near-black near-white">
         <div className="pt-main pt-perspective w-100 h-100">
@@ -99,6 +108,11 @@ class App extends Component {
             }`}
             onClick={() => this.toggleBackgroundAudio()}>
             Audio
+          </div>
+          <div
+            className="fixed right-10 top-2 pa2 pointer ttu tracked"
+            onClick={() => this.toggleMap()}>
+            Map
           </div>
         </div>
 
@@ -144,6 +158,7 @@ class App extends Component {
           </Modal>
         )}
         {backgroundAudio && <Sound url="/audio/background.mp3" playStatus={Sound.status.PLAYING} />}
+        {mapIsOpen && <Map toggle={this.toggleMap} videos={VideoList} />}
       </div>
     );
   }
