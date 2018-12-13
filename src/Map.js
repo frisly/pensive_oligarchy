@@ -4,7 +4,7 @@ import ReactMapboxGl from 'react-mapbox-gl';
 
 const Map = ReactMapboxGl({
   accessToken:
-    'pk.eyJ1IjoiY29nbml0aXZlcmVmbGV4IiwiYSI6ImNpczUxZWFqcDA5d2EyenAxb3RvdHNmNmgifQ.3svWwUzt3UwvZkjGk_EdcQ',
+    'pk.eyJ1IjoiZnJpc2x5IiwiYSI6ImNqcGtienc4dzAxc3YzeHFtaHIweXBwMGYifQ.JqHNHjD7das_tO6Tmh-9qA',
   scrollZoom: true,
   touchZoomRotate: false,
   attributionControl: false,
@@ -32,8 +32,8 @@ class MapModal extends Component {
           className="w-100 h-100"
           containerStyle={{ width: '100vw', height: '100vh' }}
           pitch={[30]}
-          center={[-117.39642, 34.06317]}
-          style="mapbox://styles/cognitivereflex/cjn3ttbla085g2sk48j42e8pu"
+          center={[-117.350373, 34.059083]}
+          style="mapbox://styles/frisly/cjplsenk500hs2rjobhp7j2cp"
         />
         <div
           className="fixed top-1 right-1 pa2 pointer ttu tracked near-black"
