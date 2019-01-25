@@ -5,14 +5,12 @@ import Sound from 'react-sound';
 import IntroModal from './IntroModal';
 import VideoList from './videos';
 import VideoModal from './VideoModal';
-import Map from './Map';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       backgroundAudio: false,
-      mapIsOpen: false,
       isOpen: true,
       initialized: false,
       overlay: false,
@@ -33,20 +31,6 @@ class App extends Component {
     window.addEventListener('resize', this.updateDimensions);
   }
 
-  toggleMap = value => {
-    if ([true, false].includes(value)) {
-      this.setState({
-        ...this.state,
-        mapIsOpen: value,
-      });
-    } else {
-      this.setState({
-        ...this.state,
-        mapIsOpen: !this.state.mapIsOpen,
-      });
-    }
-  };
-
   toggleBackgroundAudio = value => {
     if ([true, false].includes(value)) {
       this.setState({
@@ -60,6 +44,11 @@ class App extends Component {
       });
     }
   };
+
+	toggleMap = value => {
+		window.location.href = "https://objective-volhard-3f6045.netlify.com";
+	}
+
 
   onClick = () => {
     this.toggleModal();
@@ -124,7 +113,7 @@ class App extends Component {
           <div
             className="fixed right-10 top-2 pa2 pointer ttu tracked"
             onClick={() => this.toggleMap()}>
-            Map
+           Map
           </div>
         </div>
 
@@ -139,7 +128,6 @@ class App extends Component {
           />
         )}
         {backgroundAudio && <Sound url="/audio/background.mp3" playStatus={Sound.status.PLAYING} />}
-        {mapIsOpen && <Map toggle={this.toggleMap} videos={VideoList} />}
       </div>
     );
   }
