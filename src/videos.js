@@ -1,30 +1,19 @@
 export default [
   {
     name: 'Lets Clear the Air',
-    url: 'https://vimeo.com/289412607',
+    url: 'https://youtu.be/1WVUbO1VbeQ',
   },
   {
-    name: 'Nature and Warehouse',
-    url: 'https://vimeo.com/289415952',
+    name: 'Area',
+    url: 'https://youtu.be/FWe0k-HyJwA ',
   },
   {
     name: 'Familia Jaime',
-    url: 'https://vimeo.com/294699711/94e7222de9',
+    url: 'https://youtu.be/OaWzi4Q97fI',
   },
   {
     name: 'Making Nopales',
     url: 'https://vimeo.com/296980588',
   },
-  {
-    name: 'Night Scene',
-    url: 'https://vimeo.com/289413239',
-  },
-  {
-    name: 'Fleeting Mechanical Dreams',
-    url: 'https://vimeo.com/289414160',
-  },
-  {
-    name: 'Josh',
-    url: 'https://vimeo.com/294702884',
-  },
+  
 ];
