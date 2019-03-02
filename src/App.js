@@ -46,7 +46,7 @@ class App extends Component {
   };
 
 	toggleMap = value => {
-		window.location.href = "https://objective-volhard-3f6045.netlify.com";
+		window.location.href = "https://ourinlandvalley.com";
 	}
 
 
