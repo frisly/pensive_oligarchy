@@ -46,7 +46,7 @@ class App extends Component {
   };
 
 	toggleMap = value => {
-		window.location.href = "https://ourinlandvalley.com";
+		window.location.href = "https://theinlandvalley.com";
 	}
 
 
