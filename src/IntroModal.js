@@ -21,7 +21,7 @@ class IntroModal extends Component {
           <div
             className="button br2 pa2 mt3 bg-near-white near-black pointer ttu tracked b"
             onClick={this.props.close}>
-            Begin or whatnot
+            Enter
           </div>
         </div>
       </Modal>
